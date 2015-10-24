@@ -10,7 +10,9 @@ e-Commerce platform based on Flask (python microframework) and Mongo database.
 ```
 
 ######Install OS external packages (by default for Ubuntu Linux)
+```bash
     make install_soft
+```
 
 ######Create python3.x virtual environment
 ```bash
