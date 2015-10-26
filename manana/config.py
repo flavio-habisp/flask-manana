@@ -8,6 +8,6 @@ class ConfigDev(object):
     TESTING = True
     DEBUG = True
 
-    ACTIVATE_MODULES = (
+    MODULES = (
         'manana.modules.db',
     )

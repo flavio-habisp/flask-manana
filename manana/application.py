@@ -29,7 +29,7 @@ def configure_app(app, config):
 
 def configure_modules(app):
     """Initialize manana's modules."""
-    for module_path in app.config['ACTIVATE_MODULES']:
+    for module_path in app.config['MODULES']:
         module = importlib.import_module(module_path)
         assert hasattr(module, 'init_module'), \
             'Each module should contain the function `init_module`'
