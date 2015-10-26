@@ -2,3 +2,4 @@ flask-mongoengine
 pytest-flask
 selenium
 pep8
+flask-debugtoolbar
