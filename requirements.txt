@@ -3,4 +3,3 @@ pytest-flask
 selenium
 pep8
 flask-debugtoolbar
-pytest-flask
