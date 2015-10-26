@@ -9,7 +9,6 @@ from manana.application import create_application
 from manana import config
 
 
-
 @pytest.fixture(scope='session')
 def app():
     return create_application(config.ConfigTest)
