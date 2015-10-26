@@ -8,6 +8,6 @@ from flask_mongoengine import MongoEngine
 db = MongoEngine()
 
 
-def init_module(app):
+def register(app):
     app.load_default_config_from_pyfile('modules/db/config.py')
     db.init_app(app)
