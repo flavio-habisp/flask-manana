@@ -13,3 +13,7 @@ class ConfigDev(object):
         'manana.modules.mongodb',
         'manana.modules.debugtoolbar',
     )
+
+
+class ConfigTest(ConfigDev):
+    MONGODB_DB = 'manana_test'
