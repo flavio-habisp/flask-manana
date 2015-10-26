@@ -5,9 +5,11 @@
 
 
 class ConfigDev(object):
+    SECRET_KEY = '<Put here you some SECRET_KEY>'
     TESTING = True
     DEBUG = True
 
     MODULES = (
-        'manana.modules.db',
+        'manana.modules.mongodb',
+        'manana.modules.debugtoolbar',
     )
