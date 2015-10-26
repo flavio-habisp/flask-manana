@@ -30,4 +30,3 @@ def user_register(name, email, password):
 def check_user_password(user, password):
     """ Checks the plaintext password against the user's encrypted Password."""
     return encript_password(user.email, password) == user.password
-

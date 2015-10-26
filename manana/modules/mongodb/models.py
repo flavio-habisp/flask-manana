@@ -7,7 +7,7 @@ from manana.modules.mongodb import db
 
 
 class BaseMixin(db.Document):
-    meta = {'abstract': True, }
+    meta = {'abstract': True}
     rn = db.SequenceField(required=True)
     updated_at = db.DateTimeField(default=datetime.utcnow)
 

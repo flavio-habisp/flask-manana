@@ -6,5 +6,3 @@
 
 def register(app):
     pass
-
-
