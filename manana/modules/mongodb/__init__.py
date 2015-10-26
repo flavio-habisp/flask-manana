@@ -9,5 +9,7 @@ db = MongoEngine()
 
 
 def register(app):
-    app.load_default_config_from_pyfile('modules/db/config.py')
+    app.load_default_config_from_pyfile(
+        'modules/mongodb/config.py'
+    )
     db.init_app(app)
