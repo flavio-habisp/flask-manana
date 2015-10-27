@@ -8,8 +8,7 @@ from . import models
 def get_root_category():
     if not hasattr(get_root_category, 'instance'):
         get_root_category.instance = (
-            models.Category.get(models.ROOT_CATEGORY_RN)
-            or
+            models.Category.get(models.ROOT_CATEGORY_RN) or
             models.Category(
                 rn=models.ROOT_CATEGORY_RN,
                 title='Categories',

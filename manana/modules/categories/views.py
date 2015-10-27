@@ -14,4 +14,3 @@ def categories():
 
 def ajax_tree():
     return json.dumps(get_hierarchy_tree_of_categories())
-
