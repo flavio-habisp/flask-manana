@@ -51,3 +51,6 @@ def test_move_category(root_category, tree_categories):
     assert cat11.path == [root_category.rn, cat1.rn]
     assert cat2.path == [root_category.rn, cat1.rn, cat11.rn]
     assert cat21.path == [root_category.rn, cat1.rn, cat11.rn, cat2.rn]
+
+    assert cat2.rn in cat11.children
+    assert cat2.rn not in root_category.children
