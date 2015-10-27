@@ -4,7 +4,12 @@
 """
 import importlib
 from flask import Flask
+from flask.blueprints import Blueprint
 from flask.config import Config
+
+
+class ApplicationModule(Blueprint):
+    pass
 
 
 class Application(Flask):
