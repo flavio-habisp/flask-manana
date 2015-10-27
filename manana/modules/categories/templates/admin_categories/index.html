@@ -1,0 +1,42 @@
+{% set title='MODULE' %}
+
+{% set has_sidebar=True %}
+
+{% set page_header='Category' %}
+
+{% extends config.THEME.BACKEND %}
+
+{% block css %}
+  {{ super() }}
+  <link href="{{url_for('.static', filename='css/skin-xp/ui.fancytree.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block sidebar %}
+  <div id="category-tree"></div>
+{% endblock %}
+
+{% block main %}
+{{"приве"|urlencode}}
+{% endblock %}
+
+
+{% block js %}
+  {{ super() }}
+
+  <script src="/admin/category/static/jquery-ui.custom.js"></script>
+  <script src="/admin/category/static/jquery.fancytree.js"></script>
+
+  <script type="text/javascript">
+$(function(){
+    $("#category-tree").fancytree({
+      source: {
+        url: "{{ url_for('.ajax_tree') }}"
+      },
+      click: function(event, data){
+        console.log(data.node.getKeyPath());
+      }
+    });
+});
+  </script>
+{% endblock %}
+
