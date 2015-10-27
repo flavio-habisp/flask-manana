@@ -7,6 +7,7 @@ from flask_mongoengine import MongoEngine
 
 from manana.application import create_application
 from manana import config
+from manana.modules.categories.utils import get_root_category
 
 
 @pytest.fixture(scope='session')
@@ -21,3 +22,8 @@ def db(app):
     client = db.connection
     client.drop_database(db_name)
     return MongoEngine(app)
+
+
+@pytest.fixture(scope='session')
+def root_category(db):
+    return get_root_category()
