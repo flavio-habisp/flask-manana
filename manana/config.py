@@ -8,10 +8,14 @@ class ConfigDev(object):
     SECRET_KEY = '<Put here you some SECRET_KEY>'
     TESTING = True
     DEBUG = True
+    THEME = {
+        'BACKEND': 'admin_base.html'
+    }
 
     MODULES = (
         'manana.modules.mongodb',
         'manana.modules.debugtoolbar',
+        'manana.modules.categories',
     )
 
 
