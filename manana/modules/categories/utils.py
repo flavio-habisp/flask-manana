@@ -3,6 +3,7 @@
     :license: GPLv3, see LICENSE for more details.
 """
 from . import models
+from .models import Category
 
 
 def get_root_category():
@@ -70,3 +71,31 @@ def _get_hashed_categories():
     for category in models.Category.objects:
         _stack[str(category.rn)] = category
     return _stack
+
+
+def category_move(category, dest_category):
+    """If change the category's parent
+    then need to change path in children"""
+
+    def _change_children_path(cat):
+        for child in Category.objects(rn__in=cat.children):
+            child.path = cat.path + [cat.rn]
+            child.save()
+            _change_children_path(child)
+
+    if category.parent == dest_category:
+        return False
+
+    parent_from = category.parent
+    parent_from.children.remove(category.rn)
+    parent_from.save()
+
+    dest_category.children.append(category.rn)
+    dest_category.save()
+
+    category.parent = dest_category
+    category.path = dest_category.path + [dest_category.rn]
+    category.save()
+
+    _change_children_path(category)
+    return True
