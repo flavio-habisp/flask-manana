@@ -8,5 +8,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 
 def register(app):
-    app.load_default_config_from_pyfile('modules/debugtoolbar/config.py')
+    app.load_default_config_from_pyfile(
+        'modules/debugtoolbar/config.py'
+    )
     DebugToolbarExtension(app)
