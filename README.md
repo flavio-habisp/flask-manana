@@ -28,3 +28,8 @@ e-Commerce platform based on Flask (python microframework) and Mongo database.
 ```bash
     make install_eggs
 ```
+
+######Run the tests
+```bash
+    py.test .
+```
