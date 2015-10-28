@@ -1,3 +1,4 @@
+{% from '/helpers.html' import js  %}
 {% set title='MODULE' %}
 
 {% set has_sidebar=True %}
@@ -18,13 +19,10 @@
 {% block main %}
 {% endblock %}
 
-
 {% block js %}
   {{ super() }}
-
-  <script src="/admin/category/static/jquery-ui.custom.js"></script>
-  <script src="/admin/category/static/jquery.fancytree.js"></script>
-
+  {{ js('/admin/static/jquery-ui.custom.js') }}"
+  {{ js('/admin/static/jquery.fancytree.js') }}"
   <script type="text/javascript">
 $(function(){
     $("#category-tree").fancytree({

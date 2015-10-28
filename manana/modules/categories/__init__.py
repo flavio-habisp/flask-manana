@@ -14,7 +14,7 @@ category = ApplicationModule(
 )
 
 admin_category = ApplicationModule(
-    'admin_category',
+    'admin_categories',
     __package__,
     url_prefix='/admin',
     static_folder='static',
