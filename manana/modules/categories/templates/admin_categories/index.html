@@ -1,4 +1,3 @@
-{% from '/helpers.html' import js  %}
 {% set title='MODULE' %}
 
 {% set has_sidebar=True %}
@@ -9,7 +8,7 @@
 
 {% block css %}
   {{ super() }}
-  <link href="{{url_for('.static', filename='css/skin-xp/ui.fancytree.css')}}" rel="stylesheet" type="text/css">
+  {{url_for('.static', filename='css/skin-xp/ui.fancytree.css') | css }}
 {% endblock %}
 
 {% block sidebar %}
@@ -21,8 +20,8 @@
 
 {% block js %}
   {{ super() }}
-  {{ js('/admin/static/jquery-ui.custom.js') }}"
-  {{ js('/admin/static/jquery.fancytree.js') }}"
+  {{ '/admin/static/jquery-ui.custom.js'|js }}"
+  {{ '/admin/static/jquery.fancytree.js'|js }}"
   <script type="text/javascript">
 $(function(){
     $("#category-tree").fancytree({
