@@ -13,6 +13,7 @@ class ConfigDev(object):
     }
 
     MODULES = (
+        'manana.modules.template',
         'manana.modules.mongodb',
         'manana.modules.debugtoolbar',
         'manana.modules.categories',
