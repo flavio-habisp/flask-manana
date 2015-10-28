@@ -11,7 +11,6 @@ class ConfigDev(object):
     THEME = {
         'BACKEND': 'admin_base.html'
     }
-
     MODULES = (
         'manana.modules.template',
         'manana.modules.mongodb',
@@ -22,3 +21,4 @@ class ConfigDev(object):
 
 class ConfigTest(ConfigDev):
     MONGODB_DB = 'manana_test'
+    DEBUG_TB_ENABLED = False
