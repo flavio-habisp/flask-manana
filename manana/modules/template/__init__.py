@@ -6,12 +6,16 @@ from markupsafe import Markup
 
 
 def jinja2_filter_css(link):
+    """{{ 'http://example.com'| css }} ->
+    <link href="http://example.com" rel="stylesheet">"""
     return Markup(
         '<link href="{link}" rel="stylesheet">'.format(link=link)
     )
 
 
 def jinja2_filter_javascript(link):
+    """{{ 'http://example.com'|js }} ->
+     <script src="http://example.com/" ></script>"""
     return Markup(
         '<script src="{link}" ></script>'.format(link=link)
     )
