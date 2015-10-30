@@ -8,6 +8,10 @@ from flask.globals import current_app
 
 
 def render_template(template, **kwargs):
+    """
+    the result of render_template('base.html', block='main')
+    will be only the content of main block
+    """
     if 'block' in kwargs:
         block_key = kwargs.pop('block')
         return render_block(template, block_key, **kwargs)
