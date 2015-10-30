@@ -22,7 +22,7 @@ admin_category = ApplicationModule(
 )
 
 admin_category.add_url_rule('/categories/', view_func=views.categories)
-admin_category.add_url_rule('/ajax_tree/', view_func=views.ajax_tree)
+admin_category.add_url_rule('/ajax_tree/', view_func=views.category_tree_ajax)
 
 
 def register(app):

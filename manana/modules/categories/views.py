@@ -12,5 +12,5 @@ def categories():
     return render_template('admin_categories/index.html')
 
 
-def ajax_tree():
+def category_tree_ajax():
     return json.dumps(get_hierarchy_tree_of_categories())
